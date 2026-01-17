@@ -1,0 +1,61 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '12.0'
+
+# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+def flutter_root
+  generated_xcode_build_settings_path = File.expand_path(File.join('..', 'Flutter', 'Generated.xcconfig'), __FILE__)
+  unless File.exist?(generated_xcode_build_settings_path)
+    raise "#{generated_xcode_build_settings_path} must exist. If you're running pod install manually, make sure flutter pub get is executed first"
+  end
+
+  File.foreach(generated_xcode_build_settings_path) do |line|
+    matches = line.match(/FLUTTER_ROOT\=(.*)/)
+    return matches[1].strip if matches
+  end
+  raise "FLUTTER_ROOT not found in #{generated_xcode_build_settings_path}. Try deleting Generated.xcconfig, then run flutter pub get"
+end
+
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
+
+flutter_ios_podfile_setup
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  
+  # ONNX Runtime for iOS
+  pod 'onnxruntime-objc', '~> 1.17.0'
+  
+  # Add llama.cpp if using pre-built pod (or build manually)
+  # pod 'llama-cpp-ios', :path => '../llama-cpp-ios'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+    
+    target.build_configurations.each do |config|
+      # Enable bitcode (optional)
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+      
+      # Set minimum deployment target
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      
+      # Disable warnings for pods
+      config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = 'YES'
+      
+      # Enable C++17
+      config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+    end
+  end
+end
