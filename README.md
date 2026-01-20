@@ -18,7 +18,7 @@ A completely offline, cross-platform AI voice assistant built with Flutter, runn
 ```
 Flutter UI Layer
        ↓
-Platform Channels (MethodChannel/FFI)
+Platform Channels 
        ↓
 Native Layer (Kotlin/Swift)
        ↓
@@ -86,7 +86,7 @@ nova_voice_assistant/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/nova-voice-assistant.git
+git clone https://github.com/satwikshirsat04/nova_voice_assistant_1.git
 cd nova-voice-assistant
 ```
 
@@ -163,16 +163,16 @@ For better performance on lower-end devices:
 - Reduce context window to 1024
 - Use 2-3 threads instead of 4
 
-## 📊 Performance Metrics
+<!-- ## 📊 Performance Metrics
 
 | Metric | Target | Achieved |
 |--------|--------|----------|
 | Response Latency | <700ms | ~650ms |
 | CPU Usage | <45% | ~40% |
 | RAM Usage | Stable | 4-6GB |
-| Battery Impact | Low | Optimized |
+| Battery Impact | Low | Optimized | -->
 
-## 🔨 Development
+<!-- ## 🔨 Development
 
 ### Adding New Features
 
@@ -205,7 +205,7 @@ flutter test integration_test/
 
 # Performance profiling
 flutter run --profile
-```
+``` -->
 
 ## 📱 Platform-Specific Notes
 
@@ -236,22 +236,22 @@ flutter run --profile
 - Reduce batch size
 - Close other apps
 
-## 📄 License
+<!-- ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. -->
 
 ## 🙏 Acknowledgments
 
 - **Parakeet STT** - NVIDIA NeMo ASR
-- **LFM-2** - Large Foundation Model
+- **LFM-2** - Liquid Leap Large Foundation Model
 - **Kokoro TTS** - ONNX Community
 - **ONNX Runtime** - Microsoft
 - **llama.cpp** - Georgi Gerganov
 
-## 📞 Support
+<!-- ## 📞 Support
 
 For issues and feature requests, please use [GitHub Issues](https://github.com/yourusername/nova-voice-assistant/issues).
 
 ---
 
-Built with ❤️ using Flutter and AI
+Built with ❤️ using Flutter and AI -->
