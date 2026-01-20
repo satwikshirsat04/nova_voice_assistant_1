@@ -24,7 +24,8 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.nova_voice_assistant"
-    compileSdk 34
+    compileSdk 36
+    buildToolsVersion "36.0.0"
     ndkVersion "27.0.12077973"
 
     compileOptions {
@@ -43,7 +44,7 @@ android {
     defaultConfig {
         applicationId "com.example.nova_voice_assistant"
         minSdk 24
-        targetSdk 34
+        targetSdk 36
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         
