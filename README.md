@@ -111,7 +111,7 @@ Download the following models and place them in `assets/models/`:
 **LFM-2 LLM (GGUF)**
 ```bash
 # Download quantized GGUF model
-# Recommended: LFM-2-1B-Q4_K_M.gguf (~600 MB)
+# Recommended: LFM-2-1B-Q4_K_M.gguf (1.2GB)
 ```
 
 **Kokoro TTS (ONNX)**
